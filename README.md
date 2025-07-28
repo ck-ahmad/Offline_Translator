@@ -8,7 +8,7 @@
 ---
 
 <p align="center">
-  <a href="https://github.com/ck-ahmad/Offline-Translator">
+  <a href="https://github.com/ck-ahmad/Offline_Translator/blob/main/output(compress-video-online.com)%20(1).mp4" target="_blank">
     <img src="https://img.shields.io/badge/Live-Demo-blueviolet?style=for-the-badge&logo=github" alt="Demo Video">
   </a>
 </p>
