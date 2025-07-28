@@ -1,126 +1,154 @@
-Absolutely! Here's a more professional version of your `README.md` with **explicit module names instead of `requirements.txt`** and a polished structure:
+<h1 align="center">🌐 Offline Translator – Multilingual Voice & Text Translator</h1>
+
+<p align="center">
+  A fully offline, speech-enabled translator built using <strong>Flask</strong>, <strong>Python</strong>, and <strong>Googletrans</strong>. <br>
+  Translate between 100+ languages using voice commands or text input, with speech output and zero internet dependency.
+</p>
 
 ---
 
-````markdown
-# 🌐 Offline Translator App
-
-An efficient Flask-based offline translation web application that translates text between multiple languages without requiring internet access. Built for speed, privacy, and reliability using local machine translation models.
-
----
-
-## 🚀 Key Features
-
-- 🔁 **Multi-language support** for translation
-- 🌐 **100% offline** – no internet dependency
-- 🔒 **Privacy-first** – data never leaves your device
-- ⚡ **Fast translation** with preloaded local models
-- 🖥️ **User-friendly interface** built with Flask and Jinja2
+<p align="center">
+  <a href="https://github.com/ck-ahmad/Offline-Translator">
+    <img src="https://img.shields.io/badge/Live-Demo-blueviolet?style=for-the-badge&logo=github" alt="Demo Video">
+  </a>
+</p>
 
 ---
 
-## 🧱 Tech Stack & Dependencies
+## 🌍 Why Offline Translator?
 
-The application uses the following Python libraries:
+> Designed for privacy, speed, and portability. This translator runs completely offline with support for text-to-speech (TTS), voice input, and multilingual translation using the `googletrans` and `speech_recognition` libraries.
 
-| Library         | Purpose                               |
-|----------------|----------------------------------------|
-| Flask           | Web framework                          |
-| Transformers    | Pretrained language translation models |
-| Torch           | Deep learning backend for Transformers |
-| SentencePiece   | Tokenization support for translation   |
-| Langcodes       | Language code mapping and handling     |
-| pyttsx3 *(optional)* | Text-to-speech (for speech output)   |
+---
 
-> Ensure all libraries are installed locally before running the app.
+## 🔥 Highlights (July 2025)
 
-### ✅ Installation Command:
+- 🎤 **Voice Input** – Speak a sentence and get it translated
+- 🧠 **TTS Output** – Translated text is spoken aloud using `pyttsx3`
+- 🌐 **100+ Languages** – Powered by Google Translate API (offline wrapper)
+- 🔌 **Offline Mode** – No internet required after setup
+- 💡 **Flask UI** – Clean and minimal dark-themed web interface
 
-```bash
-pip install flask transformers torch sentencepiece langcodes pyttsx3
+---
+
+## 🧠 Tech Stack
+
+| Feature        | Technology Used                            |
+|----------------|---------------------------------------------|
+| Backend        | Flask, Flask-WTF                            |
+| Translation    | googletrans (offline wrapper)               |
+| Voice Input    | speech_recognition, PyAudio                 |
+| Voice Output   | pyttsx3 (offline text-to-speech)            |
+| Frontend       | HTML, CSS, JavaScript (Bootstrap optional) |
+
+---
+
+## 💬 Supported Languages
+
+- English ↔ Urdu
+- English ↔ Arabic
+- English ↔ French
+- English ↔ Chinese
+- And 100+ more! Just set `source` and `destination` language codes in UI.
+
+---
+
+## 📁 Folder Structure
+
+```
+
+Offline-Translator/
+│
+├── app.py                # Main Flask application
+├── templates/            # UI HTML pages
+│   └── index.html
+├── static/               # Optional: Custom styles, JS
+├── voice/                # Voice control modules
+│   ├── listener.py       # Handles speech recognition
+│   └── speaker.py        # Handles pyttsx3 TTS
+├── config.json           # (Optional) Language config
+├── requirements.txt      # Python dependencies
+└── README.md             # You’re here
+
 ````
 
 ---
 
-## 📁 Project Structure
-
-```
-offline-translator/
-│
-├── static/                 # Static files (CSS/JS/images)
-├── templates/              # HTML templates (Jinja2)
-│   └── index.html
-└──  app.py                  # Main Flask server script & # Translation logic and model loading 
-```
-
----
-
-## 🧠 Model Usage (Example)
-
-This app uses **MarianMT** models by Hugging Face:
-
-```python
-from transformers import MarianMTModel, MarianTokenizer
-
-model_name = 'Helsinki-NLP/opus-mt-en-de'
-tokenizer = MarianTokenizer.from_pretrained(model_name)
-model = MarianMTModel.from_pretrained(model_name)
-
-# Save locally
-tokenizer.save_pretrained('./models/en-de')
-model.save_pretrained('./models/en-de')
-```
-
-Modify `translator.py` to load the saved model from the `./models/` directory to work offline.
-
----
-
-## ▶️ Running the App
+## 🚀 How to Run Locally
 
 ```bash
+# 1. Clone the repo
+git clone https://github.com/Ahmadleo-tech/Offline-Translator.git
+cd Offline-Translator
+
+# 2. Create virtual environment
+python -m venv venv
+source venv/bin/activate  # On Windows: venv\Scripts\activate
+
+# 3. Install dependencies
+pip install -r requirements.txt
+
+# 4. Run the app
 python app.py
-```
 
-Then visit:
-
-```
-http://127.0.0.1:5000/
-```
+# Visit: http://127.0.0.1:5000/
+````
 
 ---
 
-## 🌍 How to Use
+## 📦 Example Usage
 
-1. Open the app in your browser.
-2. Select source and target languages.
-3. Enter the text you want to translate.
-4. Click **Translate**.
-5. (Optional) Click **Speak** to hear the result via text-to-speech.
+* Select `From Language`: English
+* Select `To Language`: Urdu
+* Click **🎤 Speak** or type a sentence
+* Click **Translate**
+* Hear the output with TTS 🎧
 
 ---
 
-## 📌 Notes
+## 🌐 Demo
 
-* Ensure translation models are pre-downloaded and saved locally.
-* No data is sent over the internet – completely offline functionality.
-* Optional TTS feature uses `pyttsx3` for converting translated text to speech.
+🚧 Hosted version coming soon
+🎥 Demo video will be uploaded here...
+
+---
+
+## 🧾 requirements.txt
+
+```
+Flask
+googletrans==4.0.0-rc1
+speechrecognition
+pyttsx3
+pyaudio
+```
+
+> ✅ Compatible with Windows/Linux. May require microphone permissions.
+
+---
+
+## 👨‍💻 Author
+
+**Ahmad Leo**
+🔗 [GitHub](https://github.com/ck-ahmad)<br>
+📫 Contact details in profile
 
 ---
 
 ## 📄 License
 
-MIT License © 2025 Ahmad
+MIT License — Free to use for personal and educational projects.
 
 ---
 
 ```
 
-Let me know if you want to:
+Let me know if you'd like me to generate:
 
-- Include screenshots
-- Add Docker support
-- Customize for a specific translation model (e.g., MBart)
-- Include setup instructions for Windows/Linux
+- ✅ `config.json` with language settings  
+- ✅ `.gitignore` for Python + Flask  
+- ✅ `app.py` starter template for this project  
+- ✅ Custom UI (dark with speech icon like Galaxify)
 
-I can help generate the exact `translator.py` logic too if you need it!
+Just say the word and I’ll drop the files.
 ```
