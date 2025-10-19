@@ -128,8 +128,7 @@ pyaudio
 ---
 
 ## 👨‍💻 Author
-
-**Ahmad Leo**
+**Ahmad**
 🔗 [GitHub](https://github.com/ck-ahmad)<br>
 📫 Contact details in profile
 
